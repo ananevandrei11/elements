@@ -147,7 +147,7 @@ img {
 }
 
 .home__container {
-	padding-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
   min-height: calc(100vh - var(--header-height));
   grid-template-rows: repeat(2, max-content);
   row-gap: 1.5rem;
