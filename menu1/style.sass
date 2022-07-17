@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap')
+
+:root
+  --header-height: 3rem
+
+/*Colores*/
+:root
+  --color-first: #EA4C89
+  --color-secondary: #1D2063
+  --color-text: #fff
+
+/*Fuente y tipografia*/
+:root
+  --heading-font: 'Raleway'
+  --body-font: 'Raleway'
+  --h1-font-size: 2rem
+  --h3-font-size: 1rem
+  --small-font-size: 0.8125rem
+
+@media screen and (min-width: 768px)
+  :root
+    --h1-font-size: 3.5rem
+    --h3-font-size: 1.25rem
+    --small-font-size: 0.8125rem
+
+/* z-index*/
+:root
+  --z-back: -10
+  --z-normal: 1
+  --z-tooltip: 10
+  --z-fixed: 100
+  --z-modal: 1000
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+ul
+  list-style: none
+
+a
+  text-decoration: none
+
+img
+  display: inline-block
+  max-width: 100%
+  height: auto
+
+body
+  margin: var(--header-height) 0 0 0
+  color: var(--color-text)
+  background-color: var(--color-secondary)
+  font-family: var(--body-font)
+  @media screen and (min-width: 768px)
+    margin: 0
+
+h1
+  font-size: var(--h1-font-size)
+
+.bd-grid
+  display: grid
+  grid-template-columns: 100%
+  max-width: 1200px
+  margin-left: 1rem
+  margin-right: 1rem
+  @media screen and (min-width: 1200px)
+    margin-left: auto
+    margin-right: auto
+
+.btn
+  display: inline-block
+  padding: .5rem 1.5rem
+  margin-bottom: 1rem
+  background-color: var(--color-first)
+  color: var(--color-text)
+  border-radius: 1.5rem
+  transition: box-shadow .3s
+  &:hover
+    box-shadow: 2px 0 24px var(--color-first)
+  @media screen and (min-width: 768px)
+    margin-bottom: 3rem
+
+header
+  width: 100%
+  position: fixed
+  top: 0
+  left: 0
+  background-color: var(--color-secondary)
+
+.nav
+  height: var(--header-height)
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  &__logo
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 2.5rem
+    cursor: pointer
+
+  &__toggle
+    @media screen and (min-width: 768px)
+      display: none
+  &__menu
+    position: fixed
+    top: var(--header-height)
+    right: -100%
+    width: 60%
+    height: 100vh
+    padding: 1.5rem
+    background-color: var(--color-secondary)
+    z-index: var(--z-fixed)
+    transition: all .5s
+    border-top: 1px solid var(--color-text)
+    border-left: 1px solid var(--color-text)
+    @media screen and (min-width: 768px)
+      position: static
+      top: 0
+      padding: 0
+      width: auto
+      height: auto
+      border: none
+      background-color: transparent
+
+  &__list
+    display: flex
+    flex-direction: column
+    @media screen and (min-width: 768px)
+      flex-direction: row
+
+  &__item
+    margin-bottom: 1.5rem
+    @media screen and (min-width: 768px)
+      margin-bottom: 0
+      margin-left: 10px
+
+  &__link
+    color: var(--color-text)
+    &:hover
+      border-bottom: 1px solid var(--color-text)
+
+  &__icon
+    font-size: 1.5rem
+    cursor: pointer
+
+.show
+  right: 0
+
+.hero
+  align-content: start
+  height: calc( 100vh - var(--header-height) )
+  @media screen and (min-width: 768px)
+    align-content: center
+    height: 100vh
+    grid-template-columns: repeat(2, 1fr)
+
+  &__data
+    padding-top: 2rem
+    text-align: center
+    @media screen and (min-width: 768px)
+      padding: 0
+      text-align: initial
+
+  &__title
+    margin-bottom: .5rem
+    color: var(--color-first)
+
+  &__name
+    display: block
+    margin-bottom: 1.5rem
+    font-size: var(--h3-font-size)
+
+  &__social
+    display: flex
+    align-items: center
+    text-align: initial
+
+  &__socialName
+    writing-mode: vertical-lr
+    transform: rotate(180deg)
+    border-left: 1px solid var(--color-text)
+    margin-right: .5rem
+    padding: 1rem .2rem
+    font-size: var(--small-font-size)
+
+  &__socialLink
+    margin-right: 1rem
+    color: var(--color-text)
+    cursor: pointer
+    transition: transform .5s
+    &:hover
+      transform: scale(1.5)
+    @media screen and (min-width: 768px)
+      font-size: 1.5rem
+
+  &__img
+    padding: 2rem
